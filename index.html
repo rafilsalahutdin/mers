@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Benz Premium | Аренда с водителем</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-pattern"></div>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-logo">
+            <svg class="mercedes-logo" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="#D4AF37" stroke-width="1" />
+                <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="#D4AF37" stroke-width="2" />
+            </svg>
+            <div class="preloader-text">MERCEDES BENZ PREMIUM</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">MERCEDES<span class="accent">PREMIUM</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#about" class="nav-link">Услуги</a></li>
+                    <li><a href="#fleet" class="nav-link">Автопарк</a></li>
+                    <li><a href="#advantages" class="nav-link">Преимущества</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="tel:+79999999999" class="phone-link">+7 (999) 999-99-99</a>
+                    <button class="btn-book">Заказать</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge fade-in">
+                    <span class="badge-dot"></span>
+                    Премиум класс обслуживания
+                </div>
+                <h1 class="hero-title fade-in">
+                    Mercedes Benz<br>
+                    <span class="title-gold">S-Class</span>
+                </h1>
+                <p class="hero-subtitle fade-in">
+                    Аренда представительского автомобиля с профессиональным водителем.<br>
+                    Комфорт, безопасность и безупречный стиль.
+                </p>
+                <div class="hero-cta fade-in">
+                    <button class="btn-primary btn-large">
+                        <span>Забронировать</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="btn-secondary btn-large">Узнать больше</button>
+                </div>
+                <div class="hero-stats fade-in">
+                    <div class="stat-item">
+                        <div class="stat-value">10+</div>
+                        <div class="stat-label">Лет опыта</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">5000+</div>
+                        <div class="stat-label">Клиентов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Поддержка</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image fade-in-right">
+                <div class="image-glow"></div>
+                <img src="image/foto.jpg" alt="Mercedes Benz S-Class" class="car-image">
+                <div class="floating-elements">
+                    <div class="float-card card-1">
+                        <div class="card-icon">🛡️</div>
+                        <div class="card-text">Полная страховка</div>
+                    </div>
+                    <div class="float-card card-2">
+                        <div class="card-icon">⭐</div>
+                        <div class="card-text">5.0 рейтинг</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Прокрутите вниз</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Наши услуги</div>
+                <h2 class="section-title">Премиальный сервис<br>для особых клиентов</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L3 7v6c0 5.25 3.75 9.75 9 11 5.25-1.25 9-5.75 9-11V7l-9-5z"></path>
+                            <path d="M9 12l2 2 4-4" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Трансферы</h3>
+                    <p class="service-desc">Аэропорт, вокзалы, деловые встречи. Встреча с табличкой, помощь с багажом.</p>
+                    <ul class="service-features">
+                        <li>Отслеживание рейсов</li>
+                        <li>30 минут ожидания</li>
+                        <li>Фиксированная цена</li>
+                    </ul>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                            <circle cx="12" cy="12" r="1.5" fill="#D4AF37" stroke="none"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Почасовая аренда</h3>
+                    <p class="service-desc">Деловые поездки, городские маршруты, личные дела. Гибкий график.</p>
+                    <ul class="service-features">
+                        <li>От 2 часов</li>
+                        <li>Любые маршруты</li>
+                        <li>Ожидание включено</li>
+                    </ul>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="10" width="20" height="11" rx="2"></rect>
+                            <path d="M8 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"></path>
+                            <line x1="12" y1="14" x2="12" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Межгород</h3>
+                    <p class="service-desc">Поездки между городами. Комфорт на дальних расстояниях.</p>
+                    <ul class="service-features">
+                        <li>Любое расстояние</li>
+                        <li>Опытные водители</li>
+                        <li>Выгодные тарифы</li>
+                    </ul>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 3h12l4 5-10 13L2 8l4-5z"></path>
+                            <line x1="2" y1="8" x2="22" y2="8"></line>
+                            <line x1="12" y1="21" x2="12" y2="8"></line>
+                            <line x1="6" y1="3" x2="10" y2="8"></line>
+                            <line x1="18" y1="3" x2="14" y2="8"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">VIP-сопровождение</h3>
+                    <p class="service-desc">Персональный водитель на постоянной основе. Конфиденциальность.</p>
+                    <ul class="service-features">
+                        <li>Персональный менеджер</li>
+                        <li>Абсолютная дискретность</li>
+                        <li>Индивидуальный график</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="fleet section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Автопарк</div>
+                <h2 class="section-title">Выберите свой<br>Mercedes</h2>
+            </div>
+            <div class="fleet-tabs">
+                <button class="fleet-tab active" data-tab="s-class">S-Class</button>
+                <button class="fleet-tab" data-tab="e-class">E-Class</button>
+                <button class="fleet-tab" data-tab="v-class">V-Class</button>
+                <button class="fleet-tab" data-tab="maybach">Maybach</button>
+            </div>
+            <div class="fleet-content">
+                <div class="fleet-item active" id="s-class">
+                    <div class="fleet-image-wrapper">
+                        <div class="fleet-glow"></div>
+                        <img src="image/foto.jpg" alt="S-Class">
+                    </div>
+                    <div class="fleet-info">
+                        <h3 class="fleet-title">Mercedes-Benz S-Class</h3>
+                        <p class="fleet-subtitle">Флагман представительского класса</p>
+                        <div class="fleet-specs">
+                            <div class="spec">
+                                <span class="spec-icon">👤</span>
+                                <span class="spec-value">4</span>
+                                <span class="spec-label">пассажира</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">🧳</span>
+                                <span class="spec-value">3</span>
+                                <span class="spec-label">багажа</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">⚙️</span>
+                                <span class="spec-value">Auto</span>
+                                <span class="spec-label">КПП</span>
+                            </div>
+                        </div>
+                        <ul class="fleet-features">
+                            <li>Панорамная крыша</li>
+                            <li>Массажные сиденья</li>
+                            <li>Климат-контроль 4 зоны</li>
+                            <li>Wi-Fi на борту</li>
+                        </ul>
+                        <div class="fleet-price">
+                            <div class="price-block">
+                                <span class="price-label">от</span>
+                                <span class="price-value">5 000</span>
+                                <span class="price-currency">₽/час</span>
+                            </div>
+                            <button class="btn-primary">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Other fleet items would be here -->
+            </div>
+        </div>
+    </section>
+
+<!-- Advantages Section -->
+<section id="advantages" class="advantages section-padding">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Почему мы</div>
+            <h2 class="section-title">Безупречный сервис<br>премиум класса</h2>
+        </div>
+        <div class="advantages-grid">
+            <div class="advantages-column">
+                <div class="advantage-item reveal">
+                    <div class="advantage-number">01</div>
+                    <div class="advantage-text">
+                        <h4>Профессиональные водители</h4>
+                        <p>Опыт от 10 лет, знание города, безупречный внешний вид, соблюдение этикета</p>
+                    </div>
+                </div>
+                <div class="advantage-item reveal">
+                    <div class="advantage-number">02</div>
+                    <div class="advantage-text">
+                        <h4>Автомобили 2023-2024 года</h4>
+                        <p>Только новые автомобили, регулярное ТО, идеальная чистота</p>
+                    </div>
+                </div>
+            </div>
+            <div class="advantages-column">
+                <div class="advantage-item reveal">
+                    <div class="advantage-number">03</div>
+                    <div class="advantage-text">
+                        <h4>Прозрачное ценообразование</h4>
+                        <p>Фиксированные цены, никаких скрытых платежей, оплата любым способом</p>
+                    </div>
+                </div>
+                <div class="advantage-item reveal">
+                    <div class="advantage-number">04</div>
+                    <div class="advantage-text">
+                        <h4>Круглосуточная поддержка</h4>
+                        <p>Работаем 24/7 без выходных, оперативное решение любых вопросов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="section-badge">Контакты</div>
+                    <h2 class="section-title">Свяжитесь с нами</h2>
+                    <p class="contact-desc">Готовы ответить на любые вопросы и принять ваш заказ</p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <!-- Phone -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Телефон</span>
+                                <a href="tel:+79999999999" class="contact-value">+7 (999) 999-99-99</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <!-- Email -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:info@mbpremium.ru" class="contact-value">info@mbpremium.ru</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <!-- Clock -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Режим работы</span>
+                                <span class="contact-value">24/7 без выходных</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <!-- Map Pin -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Адрес</span>
+                                <span class="contact-value">Москва, деловой центр</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 3L1 11l6 2 3 9 3-5 5 3 3-17z"></path>
+                            </svg>
+                            Telegram
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            WhatsApp
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <circle cx="18" cy="6" r="1.5" fill="#D4AF37" stroke="none"></circle>
+                            </svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="bookingForm">
+                        <h3 class="form-title">Быстрый заказ</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-input" placeholder="Телефон" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="time" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-input" required>
+                                <option value="">Выберите автомобиль</option>
+                                <option value="s-class">S-Class</option>
+                                <option value="e-class">E-Class</option>
+                                <option value="v-class">V-Class</option>
+                                <option value="maybach">Maybach</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-input" rows="4" placeholder="Дополнительные пожелания"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">
+                            <span>Отправить заявку</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">MERCEDES<span class="accent">PREMIUM</span>
+                </a>
+                    <p class="footer-desc">Премиальный сервис аренды Mercedes Benz с водителем. Комфорт, безопасность, безупречность.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Разделы</h4>
+                        <ul>
+                            <li><a href="#home">Главная</a></li>
+                            <li><a href="#about">Услуги</a></li>
+                            <li><a href="#fleet">Автопарк</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Услуги</h4>
+                        <ul>
+                            <li><a href="#">Трансферы</a></li>
+                            <li><a href="#">Почасовая аренда</a></li>
+                            <li><a href="#">Межгород</a></li>
+                            <li><a href="#">VIP-сопровождение</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MB Premium. Все права защищены.</p>
+                <div class="footer-legal">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-overlay"></div>
+        <div class-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <h3>Заказать автомобиль</h3>
+                <p>Оставьте ваши контакты, и мы свяжемся с вами в ближайшее время</p>
+                <!-- Form would be duplicated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
