@@ -812,7 +812,7 @@ body {
     top: 3px;
 }
 
-.fleet-features li svg {
+.fleet-features li svg, .fleet-features li img {
     position: relative;
     top: 10px;
     width: 35px;

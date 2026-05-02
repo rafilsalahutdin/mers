@@ -1,0 +1,23 @@
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <defs>
+        <linearGradient id="sign-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#B8962E;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      
+      <!-- Столб -->
+      <path d="M12 22V4" stroke="url(#sign-grad)" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- Верхний указатель (вправо) -->
+      <path d="M12 7H18L20 9.5L18 12H12Z" fill="url(#sign-grad)"/>
+      <path d="M14 9.5H17" stroke="#050505" stroke-width="1.2" stroke-linecap="round"/>
+      
+      <!-- Нижний указатель (влево) -->
+      <path d="M12 12H6L4 9.5L6 7H12Z" fill="url(#sign-grad)"/>
+      <path d="M7 9.5H10" stroke="#050505" stroke-width="1.2" stroke-linecap="round"/>
+      
+      <!-- Декоративные элементы на столбе -->
+      <circle cx="12" cy="15" r="1" fill="url(#sign-grad)"/>
+      <circle cx="12" cy="18" r="1" fill="url(#sign-grad)"/>
+    </svg>
