@@ -1066,6 +1066,34 @@ body {
     stroke: #000;
 }
 
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 16px;
+}
+.header-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* Чуть больше размер для детализации */
+  height: 32px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+.header-socials a svg {
+  width: 100%;
+  height: 100%;
+}
+.header-socials a:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
+}
+
+.header-socials img {
+    width: 25px;
+}
+
 /* Contact Form */
 .contact-form-wrapper {
     background: var(--color-gray-dark);
@@ -1288,7 +1316,7 @@ textarea.form-input {
     :root {
         --section-padding: 80px;
     }
-    
+
     .hero .container,
     .fleet-item,
     .advantages-wrapper,
@@ -1296,19 +1324,19 @@ textarea.form-input {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .hero-image {
         order: -1;
     }
-    
+
     .hero-title {
         font-size: 48px;
     }
-    
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .footer-wrapper {
         grid-template-columns: 1fr;
     }
@@ -1319,79 +1347,79 @@ textarea.form-input {
     .nav-cta {
         display: none;
     }
-    
+
     .hamburger {
         display: flex;
     }
-    
+
     .hero-title {
         font-size: 36px;
     }
-    
+
     .hero-subtitle {
         font-size: 16px;
     }
-    
+
     .hero-cta {
         flex-direction: column;
     }
-    
+
     .hero-stats {
         gap: 30px;
     }
-    
+
     .stat-value {
         font-size: 28px;
     }
-    
+
     .section-title {
         font-size: 32px;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .fleet-tabs {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .fleet-tab {
         text-align: center;
     }
-    
+
     .fleet-specs {
         flex-wrap: wrap;
         gap: 20px;
     }
-    
+
     .fleet-features {
         grid-template-columns: 1fr;
     }
-    
+
     .fleet-price {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .advantage-item {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-form-wrapper {
         padding: 30px;
     }
-    
+
     .footer-links {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: 20px;
@@ -1403,20 +1431,20 @@ textarea.form-input {
     .hero-title {
         font-size: 28px;
     }
-    
+
     .btn-large {
         padding: 14px 24px;
         font-size: 14px;
     }
-    
+
     .section-title {
         font-size: 26px;
     }
-    
+
     .fleet-title {
         font-size: 26px;
     }
-    
+
     .price-value {
         font-size: 32px;
     }
