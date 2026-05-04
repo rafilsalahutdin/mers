@@ -275,7 +275,7 @@ body {
     cursor: pointer;
     transition: var(--transition-base);
     border: none;
-    /*display: inline-flex;*/
+    display: inline-flex;
     align-items: center;
     gap: 10px;
 }
@@ -377,7 +377,7 @@ body {
 }
 
 .hero-title {
-    font-size: 72px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -826,6 +826,11 @@ body {
     gap: 30px;
 }
 
+.contact-block {
+    display: block;
+    margin-top: 50px;
+}
+
 .price-block {
     display: flex;
     align-items: center;
@@ -840,6 +845,12 @@ body {
 .price-value {
     width: 35px;
     font-size: 42px;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.contact-block-value {
+    font-size: 28px;
     font-weight: 700;
     color: var(--color-gold);
 }
@@ -994,7 +1005,7 @@ body {
     flex-shrink: 0;
 }
 
-.contact-icon svg {
+.contact-icon svg, .contact-label img {
     width: 24px;
     height: 24px;
 }
@@ -1327,6 +1338,17 @@ textarea.form-input {
         display: none;
     }
 
+    .nav-menu {
+        background: #000000;
+        position: absolute;
+        top: 0;
+        min-width: calc(100% - 70px);
+        padding: 35px;
+        gap: 10px;
+    }
+    .nav-menu.active {
+        display: grid;
+    }
     .hamburger {
         display: flex;
     }

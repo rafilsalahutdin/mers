@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    
     // ============================================
     // Preloader - FIX
     // ============================================
@@ -7,19 +6,16 @@ $(document).ready(function() {
         $('.preloader').addClass('hidden');
         $('body').removeClass('preload');
     }
-    
     // Скрываем через 2 секунды максимум
     setTimeout(function() {
         hidePreloader();
     }, 2000);
-    
     // Или когда всё загрузится
     $(window).on('load', function() {
         setTimeout(function() {
             hidePreloader();
         }, 500);
     });
-    
     // ============================================
     // Navigation Scroll Effect
     // ============================================
@@ -30,7 +26,6 @@ $(document).ready(function() {
             $('.navbar').removeClass('scrolled');
         }
     });
-    
     // ============================================
     // Smooth Scroll
     // ============================================
@@ -43,25 +38,21 @@ $(document).ready(function() {
             }, 800);
         }
     });
-    
     // ============================================
     // Active Navigation Link
     // ============================================
     $(window).on('scroll', function() {
         var scrollPos = $(window).scrollTop() + 100;
-        
         $('section').each(function() {
             var sectionTop = $(this).offset().top;
             var sectionBottom = sectionTop + $(this).outerHeight();
             var sectionId = $(this).attr('id');
-            
             if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
                 $('.nav-link').removeClass('active');
                 $('.nav-link[href="#' + sectionId + '"]').addClass('active');
             }
         });
     });
-    
     // ============================================
     // Mobile Menu Toggle
     // ============================================
@@ -69,20 +60,17 @@ $(document).ready(function() {
         $(this).toggleClass('active');
         $('.nav-menu').slideToggle(300);
     });
-    
     // ============================================
     // Fleet Tabs
     // ============================================
-    $('.fleet-tab').on('click', function() {
+    /*$('.fleet-tab').on('click', function() {
         var tabId = $(this).data('tab');
-        
         $('.fleet-tab').removeClass('active');
         $(this).addClass('active');
-        
         $('.fleet-item').removeClass('active');
         $('#' + tabId).addClass('active');
     });
-    
+    */
     // ============================================
     // Scroll Reveal Animation
     // ============================================
@@ -91,26 +79,21 @@ $(document).ready(function() {
             var elementTop = $(this).offset().top;
             var windowBottom = $(window).scrollTop() + $(window).height();
             var revealPoint = elementTop - $(window).height() * 0.85;
-            
             if (windowBottom > revealPoint) {
                 $(this).addClass('active');
             }
         });
     }
-    
     $(window).on('scroll', revealOnScroll);
     revealOnScroll();
-    
     // ============================================
     // Form Submission
     // ============================================
     $('#bookingForm').on('submit', function(e) {
         e.preventDefault();
-        
         var $form = $(this);
         var $submitBtn = $form.find('button[type="submit"]');
         var originalText = $submitBtn.html();
-        
         var isValid = true;
         $form.find('[required]').each(function() {
             if (!$(this).val()) {
