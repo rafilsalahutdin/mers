@@ -275,7 +275,7 @@ body {
     cursor: pointer;
     transition: var(--transition-base);
     border: none;
-    display: inline-flex;
+    /*display: inline-flex;*/
     align-items: center;
     gap: 10px;
 }
@@ -707,7 +707,8 @@ body {
 
 /* ============================================
    Fleet Section
-   ============================================ */
+   ============================================*/
+/*
 .fleet-tabs {
     display: flex;
     justify-content: center;
@@ -734,23 +735,24 @@ body {
     border-color: var(--color-gold);
     color: var(--color-black);
 }
-
+*/
 .fleet-content {
     position: relative;
 }
 
 .fleet-item {
-    display: none;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
     animation: fadeIn 0.5s ease;
+    margin-bottom: 55px;
 }
-
+/*
 .fleet-item.active {
     display: grid;
 }
-
+*/
 .fleet-image-wrapper {
     position: relative;
     border-radius: 12px;
@@ -798,7 +800,6 @@ body {
 .fleet-features li {
     font-size: 14px;
     color: var(--color-text);
-    padding-left: 25px;
     position: relative;
 }
 
@@ -827,24 +828,25 @@ body {
 
 .price-block {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 5px;
 }
 
 .price-label {
     font-size: 16px;
-    color: var(--color-text-muted);
+    color: var(--color-text);
 }
 
 .price-value {
+    width: 35px;
     font-size: 42px;
     font-weight: 700;
     color: var(--color-gold);
 }
 
 .price-currency {
-    font-size: 18px;
-    color: var(--color-text-muted);
+    font-size: 16px;
+    color: var(--color-text);
 }
 
 /* ============================================
@@ -1356,7 +1358,7 @@ textarea.form-input {
     .services-grid {
         grid-template-columns: 1fr;
     }
-
+/*
     .fleet-tabs {
         flex-direction: column;
         align-items: stretch;
@@ -1365,7 +1367,7 @@ textarea.form-input {
     .fleet-tab {
         text-align: center;
     }
-
+*/
     .fleet-features {
         grid-template-columns: 1fr;
     }
