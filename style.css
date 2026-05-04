@@ -275,7 +275,7 @@ body {
     cursor: pointer;
     transition: var(--transition-base);
     border: none;
-    display: inline-flex;
+    /*display: inline-flex;*/
     align-items: center;
     gap: 10px;
 }
@@ -943,6 +943,9 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .btn-primary, .btn-secondary, .btn-book {
+        min-width: 100%;
+    }
     .advantages-grid {
         grid-template-columns: 1fr;
         gap: 25px;
