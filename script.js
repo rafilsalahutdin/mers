@@ -86,6 +86,28 @@ $(document).ready(function() {
     }
     $(window).on('scroll', revealOnScroll);
     revealOnScroll();
+
+// Открытие модального окна
+$(document).on('click', '.modal-trigger', function(e) {
+    e.preventDefault(); // Чтобы ссылки не прыгали
+    $('#bookingModal').addClass('active');
+    $('body').css('overflow', 'hidden'); // Блокируем прокрутку фона
+});
+
+// Закрытие по крестику и оверлею
+$('.modal-close, .modal-overlay').on('click', function() {
+    $('#bookingModal').removeClass('active');
+    $('body').css('overflow', ''); // Возвращаем прокрутку
+});
+
+// Закрытие по Esc
+$(document).keyup(function(e) {
+    if (e.key === "Escape") {
+        $('#bookingModal').removeClass('active');
+        $('body').css('overflow', '');
+    }
+});
+
     // ============================================
     // Form Submission
     // ============================================

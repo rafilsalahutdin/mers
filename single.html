@@ -56,7 +56,7 @@
                 </div>
                 <div class="nav-cta">
                     <a href="tel:+79999999999" class="phone-link">+7 (999) 999-99-99</a>
-                    <button class="btn-book">Заказать</button>
+                    <button class="btn-book modal-trigger">Заказать</button>
                 </div>
                 <div class="hamburger">
                     <span></span>
@@ -121,12 +121,17 @@
                             <span class="contact-label">
 
                             </span>
-                            <button class="btn-primary">Заказать</button>
+                            <button class="btn-primary modal-trigger">Заказать</button>
                         </div>
                     </div>
                     <div class="fleet-image-wrapper">
                         <div class="fleet-glow"></div>
-                        <img src="image/W223/W223-1.jpg" alt="S-Class">
+                        <div class="slideshow">
+                            <img src="image/W223/W223-1.jpg" alt="S-Class">
+                            <img src="image/W223/W223-2.jpg" alt="S-Class">
+                            <img src="image/W223/W223-3.jpg" alt="S-Class">
+                            <img src="image/W223/W223-4.jpg" alt="S-Class">
+                        </div>
                     </div>
                 </div>
                 <!--div class="text-item">
@@ -315,18 +320,72 @@
     <!-- Modal -->
     <div class="modal" id="bookingModal">
         <div class="modal-overlay"></div>
-        <div class-modal-content">
+        <div class="modal-content">
             <button class="modal-close">&times;</button>
             <div class="modal-body">
-                <h3>Заказать автомобиль</h3>
-                <p>Оставьте ваши контакты, и мы свяжемся с вами в ближайшее время</p>
-                <!-- Form would be duplicated here -->
+                <form class="contact-form" id="bookingForm">
+                    <h3 class="form-title">Заказать автомобиль</h3>
+                    <p>Оставьте ваши контакты, и мы свяжемся с вами в ближайшее время</p>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-input" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="date" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="time" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-input" required>
+                            <option value="">Выберите автомобиль</option>
+                            <option value="s-class">S-class AMG W222</option>
+                            <option value="e-class">S-class AMG W223</option>
+                            <option value="v-class">V-Class</option>
+                            <option value="sprinter">Sprinter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" rows="4" placeholder="Дополнительные пожелания"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">
+                        <span>Отправить заявку</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                </form>
             </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".slideshow").slick({
+                infinite: true,
+                speed: 300,
+                fade: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                swipe: true,
+                draggable: true,
+                arrows: false,
+                dots: true,
+                adaptiveHeight: true,
+            });
+        });
+    </script>
 </body>
 
 </html>
