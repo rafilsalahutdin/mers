@@ -87,72 +87,38 @@ $(document).ready(function() {
     $(window).on('scroll', revealOnScroll);
     revealOnScroll();
 
-// Открытие модального окна
-$(document).on('click', '.modal-trigger', function(e) {
-    e.preventDefault(); // Чтобы ссылки не прыгали
-    $('#bookingModal').addClass('active');
-    $('body').css('overflow', 'hidden'); // Блокируем прокрутку фона
-});
+    // Открытие модального окна
+    $(document).on('click', '.modal-trigger', function(e) {
+        e.preventDefault(); // Чтобы ссылки не прыгали
+        $('#bookingModal').addClass('active');
+        $('body').css('overflow', 'hidden'); // Блокируем прокрутку фона
+    });
 
-// Закрытие по крестику и оверлею
-$('.modal-close, .modal-overlay').on('click', function() {
-    $('#bookingModal').removeClass('active');
-    $('body').css('overflow', ''); // Возвращаем прокрутку
-});
-
-// Закрытие по Esc
-$(document).keyup(function(e) {
-    if (e.key === "Escape") {
+    // Закрытие по крестику и оверлею
+    $('.modal-close, .modal-overlay').on('click', function() {
         $('#bookingModal').removeClass('active');
-        $('body').css('overflow', '');
-    }
-});
+        $('body').css('overflow', ''); // Возвращаем прокрутку
+    });
 
-    // ============================================
-    // Form Submission
-    // ============================================
-    $('#bookingForm').on('submit', function(e) {
-        e.preventDefault();
-        var $form = $(this);
-        var $submitBtn = $form.find('button[type="submit"]');
-        var originalText = $submitBtn.html();
-        var isValid = true;
-        $form.find('[required]').each(function() {
-            if (!$(this).val()) {
-                isValid = false;
-                $(this).addClass('error');
-            } else {
-                $(this).removeClass('error');
-            }
-        });
-        
-        if (isValid) {
-            $submitBtn.html('<span>Отправка...</span>');
-            $submitBtn.prop('disabled', true);
-            
-            setTimeout(function() {
-                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-                $form[0].reset();
-                $submitBtn.html(originalText);
-                $submitBtn.prop('disabled', false);
-            }, 1500);
+    // Закрытие по Esc
+    $(document).keyup(function(e) {
+        if (e.key === "Escape") {
+            $('#bookingModal').removeClass('active');
+            $('body').css('overflow', '');
         }
     });
-    
+
     // ============================================
     // Phone Input Mask
     // ============================================
     $('input[type="tel"]').on('input', function() {
         var value = this.value.replace(/\D/g, '');
         var formattedValue = '';
-        
         if (value.length > 0) {
             if (value[0] === '7' || value[0] === '8') {
                 value = value.substring(1);
             }
-            
             formattedValue = '+7';
-            
             if (value.length > 0) {
                 formattedValue += ' (' + value.substring(0, 3);
             }
@@ -166,8 +132,59 @@ $(document).keyup(function(e) {
                 formattedValue += '-' + value.substring(8, 10);
             }
         }
-        
         this.value = formattedValue;
     });
+// ============================================
+// Form Submission (AJAX to mail.php)
+    // ============================================
+    $('#bookingForm').on('submit', function(e) {
+    e.preventDefault();
     
+    var $form = $(this);
+    var $submitBtn = $form.find('button[type="submit"]');
+    var originalText = $submitBtn.html();
+    
+    // Простая валидация
+    var name = $form.find('[name="name"]').val().trim();
+    var phone = $form.find('[name="phone"]').val().trim();
+    
+    if (name.length < 2) {
+        alert('Введите корректное имя');
+        return;
+    }
+    if (phone.replace(/\D/g, '').length < 10) {
+        alert('Введите корректный телефон');
+        return;
+    }
+    
+    $submitBtn.html('<span>Отправка...</span>').prop('disabled', true);
+    
+    $.ajax({
+        url: 'mail.php',
+        type: 'POST',
+        data: $form.serialize(),  // ✅ Исправлено: добавлено "data:"
+        dataType: 'json',
+        timeout: 10000,
+        success: function(response) {
+            if (response.success) {
+                alert('✅ Спасибо! Мы свяжемся с вами в ближайшее время.');
+                $form[0].reset();
+                $('#bookingModal').removeClass('active');
+                $('body').css('overflow', '');
+            } else {
+                console.log('Server errors:', response);
+                alert('⚠️ ' + (response.message || 'Ошибка отправки'));
+            }
+        },
+        error: function(xhr, status, error) {
+            console.log('AJAX Error:', { status, error, response: xhr.responseText });
+            //alert('❌ Ошибка: ' + (xhr.responseJSON?.message || 'Проверьте консоль'));
+            alert('❌ Ошибка соединения. Попробуйте позвонить по телефонам, указанным на сайте');
+        },
+        complete: function() {
+            $submitBtn.html(originalText).prop('disabled', false);
+        }
+    });
+});
+
 });

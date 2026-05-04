@@ -468,8 +468,7 @@ body {
 
 .float-card {
     position: absolute;
-    background: rgba(26, 26, 26, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(26, 26, 26, 0.75);
     padding: 15px 25px;
     border-radius: 12px;
     border: 1px solid rgba(212, 175, 55, 0.2);
@@ -815,8 +814,8 @@ body {
 
 .fleet-features li svg, .fleet-features li img {
     position: relative;
-    top: 10px;
-    width: 35px;
+    top: 5px;
+    width: 20px;
     margin-right: 15px;
 }
 
@@ -847,6 +846,12 @@ body {
     font-size: 42px;
     font-weight: 700;
     color: var(--color-gold);
+}
+
+.price-value img {
+    position: relative;
+    top: -5px;
+    width: 20px;
 }
 
 .contact-block-value {
@@ -1010,7 +1015,7 @@ body {
     flex-shrink: 0;
 }
 
-.contact-icon svg, .contact-label img {
+.contact-icon svg, .contact-label img, .social-links img {
     width: 24px;
     height: 24px;
 }
@@ -1102,6 +1107,10 @@ body {
     margin-bottom: 30px;
 }
 
+.contact-form p {
+    margin-bottom: 20px;
+}
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -1151,6 +1160,20 @@ textarea.form-input {
     font-size: 12px;
     color: var(--color-text-muted);
     text-align: center;
+    margin-top: 15px;
+}
+
+.form-label span {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 200;
+}
+
+.form-label a {
+    color: var(--color-gold);
+}
+
+button.btn-primary.btn-full {
     margin-top: 15px;
 }
 
@@ -1444,6 +1467,7 @@ textarea.form-input {
 
     .fleet-title {
         font-size: 26px;
+        text-align: center;
     }
 
     .price-value {

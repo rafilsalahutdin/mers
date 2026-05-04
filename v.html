@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Аренда Mercedes с водителем в Казани и за пределами города | TatarAuto с водителем</title>
+    <title>Аренда Mercedes-Benz V-Class с водителем в Казани и за пределами города | TatarAuto с водителем</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,11 +32,11 @@
                     <span class="logo-text">TATAR<span class="accent">AUTO</span>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active">Главная</a></li>
-                    <li><a href="#fleet" class="nav-link">Автопарк</a></li>
-                    <li><a href="#about" class="nav-link">Услуги</a></li>
-                    <li><a href="#advantages" class="nav-link">О компании</a></li>
-                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                    <li><a href="/" class="nav-link active">Главная</a></li>
+                    <li><a href="/#fleet" class="nav-link">Автопарк</a></li>
+                    <li><a href="/#about" class="nav-link">Услуги</a></li>
+                    <li><a href="/#advantages" class="nav-link">О компании</a></li>
+                    <li><a href="/#contact" class="nav-link">Контакты</a></li>
                 </ul>
                 <div class="header-socials">
                     <!-- Telegram -->
@@ -208,27 +208,18 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="social-links">
-                        <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 3L1 11l6 2 3 9 3-5 5 3 3-17z"></path>
-                            </svg>
-                            Telegram
+                        <!-- Telegram -->
+                        <a href="#" aria-label="Telegram">
+                            <img src="image/tg.svg">
                         </a>
-                        <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                            </svg>
-                            WhatsApp
+                        <!-- WhatsApp -->
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="image/wa.svg">
                         </a>
-                        <a href="#" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-                                <circle cx="12" cy="12" r="5"></circle>
-                                <circle cx="18" cy="6" r="1.5" fill="#D4AF37" stroke="none"></circle>
-                            </svg>
-                            Instagram
+                        <!-- Макс (VK) -->
+                        <a href="#" aria-label="Макс">
+                            <img src="image/max.svg">
                         </a>
                     </div>
                 </div>
@@ -237,21 +228,21 @@
                     <form class="contact-form" id="bookingForm">
                         <h3 class="form-title">Быстрый заказ</h3>
                         <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Ваше имя" required>
+                            <input type="text" class="form-input" name="name" placeholder="Ваше имя" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-input" placeholder="Телефон" required>
+                            <input type="tel" class="form-input" name="phone" placeholder="Телефон" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="date" class="form-input" required>
+                                <input type="date" name="date" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <input type="time" class="form-input" required>
+                                <input type="time" name="time" class="form-input" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <select class="form-input" required>
+                            <select name="car" class="form-input" required>
                                 <option value="">Выберите автомобиль</option>
                                 <option value="s-class">S-class AMG W222</option>
                                 <option value="e-class">S-class AMG W223</option>
@@ -260,15 +251,20 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-input" rows="4" placeholder="Дополнительные пожелания"></textarea>
+                            <textarea name="message" class="form-input" rows="4" placeholder="Дополнительные пожелания"></textarea>
                         </div>
+                        <label class="form-label">
+                            <input type="checkbox" class="checkbox-input" required>
+                            <span>Я даю свое согласие на обработку персональных данных и соглашаюсь с
+                                <a href="/privacy-policy.html" target="_blank">условиями и политикой конфиденциальности.</a>
+                            </span>
+                        </label>
                         <button type="submit" class="btn-primary btn-full">
                             <span>Отправить заявку</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
                     </form>
                 </div>
             </div>
@@ -312,8 +308,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 TatAuto. Все права защищены.</p>
                 <div class="footer-legal">
-                    <a href="#">Политика конфиденциальности</a>
-                    <a href="#">Договор оферты</a>
+                    <a href="/privacy-policy.html">Политика конфиденциальности</a>
+                    <a href="/offer.html">Договор оферты</a>
                 </div>
             </div>
         </div>
@@ -329,21 +325,21 @@
                     <h3 class="form-title">Заказать автомобиль</h3>
                     <p>Оставьте ваши контакты, и мы свяжемся с вами в ближайшее время</p>
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Ваше имя" required>
+                        <input type="text" class="form-input" name="name" placeholder="Ваше имя" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-input" placeholder="Телефон" required>
+                        <input type="tel" class="form-input" name="phone" placeholder="Телефон" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="date" class="form-input" required>
+                            <input type="date" name="date" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <input type="time" class="form-input" required>
+                            <input type="time" name="time" class="form-input" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <select class="form-input" required>
+                        <select name="car" class="form-input" required>
                             <option value="">Выберите автомобиль</option>
                             <option value="s-class">S-class AMG W222</option>
                             <option value="e-class">S-class AMG W223</option>
@@ -352,15 +348,20 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-input" rows="4" placeholder="Дополнительные пожелания"></textarea>
+                        <textarea name="message" class="form-input" rows="4" placeholder="Дополнительные пожелания"></textarea>
                     </div>
+                    <label class="form-label">
+                        <input type="checkbox" class="checkbox-input" required>
+                        <span>Я даю свое согласие на обработку персональных данных и соглашаюсь с
+                            <a href="/privacy-policy.html" target="_blank">условиями и политикой конфиденциальности.</a>
+                        </span>
+                    </label>
                     <button type="submit" class="btn-primary btn-full">
                         <span>Отправить заявку</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                    <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
                 </form>
             </div>
         </div>
