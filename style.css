@@ -201,6 +201,14 @@ body {
     font-size: 24px;
 }
 
+span.logo-text2 {
+    display: block;
+    color: var(--color-gold);
+    font-size: 12px;
+    font-weight: 100;
+    text-align: center;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
