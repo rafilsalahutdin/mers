@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аренда Mercedes с водителем в Казани и за пределами города | TatarAuto с водителем</title>
-    <link rel="stylesheet" href="style.css?v=0.2">
+    <link rel="stylesheet" href="style.css?v=0.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -41,22 +41,22 @@
                 </ul>
                 <div class="header-socials">
                     <!-- Telegram -->
-                    <a href="#" aria-label="Telegram">
+                    <a href="https://t.me/+79872050403" aria-label="Telegram">
                         <img src="image/tg.svg">
                     </a>
 
                     <!-- WhatsApp -->
-                    <a href="#" aria-label="WhatsApp">
+                    <a href="https://wa.me/79872050403" aria-label="WhatsApp">
                         <img src="image/wa.svg">
                     </a>
 
-                    <!-- Макс (VK) -->
-                    <a href="#" aria-label="Макс">
+                    <!-- Макс -->
+                    <a href="https://max.ru/u/f9LHodD0cOI9r-7Fd5RwrSNzGCXtwhL1mIITdt8Pv_jcfv4HCKtzgHrtu4E" aria-label="Макс">
                         <img src="image/max.svg">
                     </a>
                 </div>
                 <div class="nav-cta">
-                    <a href="tel:+79999999999" class="phone-link">+7 (999) 999-99-99</a>
+                    <a href="tel:+78432969944" class="phone-link">+7 (843) 296-99-44</a>
                     <button class="btn-book modal-trigger">Заказать</button>
                 </div>
                 <div class="hamburger">
@@ -67,7 +67,33 @@
             </div>
         </div>
     </nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-header">
+            <a href="/" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">TATAR<span class="accent">AUTO</span>
+                    <span class="logo-text2">с водителем.</span>
+            </a>
+            <button class="mobile-close" aria-label="Закрыть меню">&times;</button>
+        </div>
+
+        <ul class="mobile-nav">
+            <li><a href="#home" class="nav-link active">Главная</a></li>
+            <li><a href="#fleet" class="nav-link">Автопарк</a></li>
+            <li><a href="#about" class="nav-link">Услуги</a></li>
+            <li><a href="#advantages" class="nav-link">Преимущества</a></li>
+            <li><a href="#contact" class="nav-link">Контакты</a></li>
+        </ul>
+
+        <div class="mobile-footer">
+            <a href="tel:+78432969944" class="phone-link">+7 (843) 296-99-44</a>
+            <button class="btn-primary modal-trigger" style="width:100%; justify-content:center;">Заказать авто</button>
+        </div>
+    </div>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg-overlay"></div>
@@ -100,7 +126,7 @@
                         <div class="stat-label">Лет опыта</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">5000+</div>
+                        <div class="stat-value">500+</div>
                         <div class="stat-label">Клиентов</div>
                     </div>
                     <div class="stat-item">
@@ -428,7 +454,7 @@
                             </div>
                             <div class="contact-details">
                                 <span class="contact-label">Телефон</span>
-                                <a href="tel:+79999999999" class="contact-value">+7 (999) 999-99-99</a>
+                                <a href="tel:+78432969944" class="contact-value">+7 (843) 296-99-44</a>
                             </div>
                         </div>
 
@@ -442,7 +468,7 @@
                             </div>
                             <div class="contact-details">
                                 <span class="contact-label">Email</span>
-                                <a href="mailto:info@tatarauto.com" class="contact-value">info@tatarauto</a>
+                                <a href="mailto:TatarAuto@bk.ru" class="contact-value">TatarAuto@bk.ru</a>
                             </div>
                         </div>
 
@@ -470,24 +496,24 @@
                             </div>
                             <div class="contact-details">
                                 <span class="contact-label">Адрес</span>
-                                <span class="contact-value">Казань, деловой центр</span>
+                                <span class="contact-value">Казань, ул. Петербургская</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="social-links">
                         <!-- Telegram -->
-                        <a href="#" aria-label="Telegram">
+                        <a href="https://t.me/+79872050403" aria-label="Telegram">
                             <img src="image/tg.svg">
                         </a>
 
                         <!-- WhatsApp -->
-                        <a href="#" aria-label="WhatsApp">
+                        <a href="https://wa.me/79872050403" aria-label="WhatsApp">
                             <img src="image/wa.svg">
                         </a>
 
-                        <!-- Макс (VK) -->
-                        <a href="#" aria-label="Макс">
+                        <!-- Макс -->
+                        <a href="https://max.ru/u/f9LHodD0cOI9r-7Fd5RwrSNzGCXtwhL1mIITdt8Pv_jcfv4HCKtzgHrtu4E" aria-label="Макс">
                             <img src="image/max.svg">
                         </a>
                     </div>
@@ -578,7 +604,6 @@
                 <p>&copy; 2026 TatAuto. Все права защищены.</p>
                 <div class="footer-legal">
                     <a href="/privacy-policy.html">Политика конфиденциальности</a>
-                    <a href="/offer.html">Договор оферты</a>
                 </div>
             </div>
         </div>
@@ -637,7 +662,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=0.4"></script>
 </body>
 
 </html>
