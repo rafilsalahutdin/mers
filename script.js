@@ -26,18 +26,18 @@ $(document).ready(function() {
             $('.navbar').removeClass('scrolled');
         }
     });
-    // ============================================
-    // Smooth Scroll
+
+   // ============================================
+    // ЯКОРЯ (только same-page, безопасно)
     // ============================================
     $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-        var target = $(this.getAttribute('href'));
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top - 80
-            }, 800);
+        var $target = $(this.hash);
+        if ($target.length) {
+            e.preventDefault();
+            $('html, body').stop().animate({ scrollTop: $target.offset().top - 80 }, 800);
         }
     });
+
     // ============================================
     // Active Navigation Link
     // ============================================
@@ -53,24 +53,28 @@ $(document).ready(function() {
             }
         });
     });
+
     // ============================================
-    // Mobile Menu Toggle
+    // МОБИЛЬНОЕ МЕНЮ
     // ============================================
-    $('.hamburger').on('click', function() {
-        $(this).toggleClass('active');
-        $('.nav-menu').slideToggle(300);
+    const $mobileMenu = $('#mobileMenu');
+    const $mobileOverlay = $('#mobileOverlay');
+    $('.hamburger').on('click', function(e) {
+        e.stopPropagation();
+        $mobileMenu.addClass('active');
+        $mobileOverlay.addClass('active');
+        $('body').css('overflow', 'hidden');
     });
-    // ============================================
-    // Fleet Tabs
-    // ============================================
-    /*$('.fleet-tab').on('click', function() {
-        var tabId = $(this).data('tab');
-        $('.fleet-tab').removeClass('active');
-        $(this).addClass('active');
-        $('.fleet-item').removeClass('active');
-        $('#' + tabId).addClass('active');
-    });
-    */
+    function closeMobileMenu() {
+        $mobileMenu.removeClass('active');
+        $mobileOverlay.removeClass('active');
+        if (!$('#bookingModal').hasClass('active')) $('body').css('overflow', '');
+    }
+    $mobileOverlay.on('click', closeMobileMenu);
+    $('.mobile-close').on('click', closeMobileMenu);
+    $('#mobileMenu a').on('click', closeMobileMenu);
+    $(document).on('keydown', function (e) { if (e.key === 'Escape') closeMobileMenu(); });
+
     // ============================================
     // Scroll Reveal Animation
     // ============================================
@@ -87,26 +91,28 @@ $(document).ready(function() {
     $(window).on('scroll', revealOnScroll);
     revealOnScroll();
 
-    // Открытие модального окна
+   // ============================================
+    // МОДАЛЬНОЕ ОКНО
+    // ============================================
+    const $modal = $('#bookingModal');
+
     $(document).on('click', '.modal-trigger', function(e) {
-        e.preventDefault(); // Чтобы ссылки не прыгали
-        $('#bookingModal').addClass('active');
-        $('body').css('overflow', 'hidden'); // Блокируем прокрутку фона
+        e.preventDefault();
+        e.stopPropagation(); // Не даём меню/якорям перехватить
+        $modal.addClass('active');
+        $('body').css('overflow', 'hidden');
     });
 
-    // Закрытие по крестику и оверлею
-    $('.modal-close, .modal-overlay').on('click', function() {
-        $('#bookingModal').removeClass('active');
-        $('body').css('overflow', ''); // Возвращаем прокрутку
+    function closeModal() {
+        $modal.removeClass('active');
+        if (!$mobileMenu.hasClass('active')) $('body').css('overflow', '');
+    }
+
+    $modal.find('.modal-close, .modal-overlay').on('click', closeModal);
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape' && $modal.hasClass('active')) closeModal();
     });
 
-    // Закрытие по Esc
-    $(document).keyup(function(e) {
-        if (e.key === "Escape") {
-            $('#bookingModal').removeClass('active');
-            $('body').css('overflow', '');
-        }
-    });
 
     // ============================================
     // Phone Input Mask
@@ -134,57 +140,42 @@ $(document).ready(function() {
         }
         this.value = formattedValue;
     });
-// ============================================
-// Form Submission (AJAX to mail.php)
+
     // ============================================
-    $('#bookingForm').on('submit', function(e) {
-    e.preventDefault();
-    
-    var $form = $(this);
-    var $submitBtn = $form.find('button[type="submit"]');
-    var originalText = $submitBtn.html();
-    
-    // Простая валидация
-    var name = $form.find('[name="name"]').val().trim();
-    var phone = $form.find('[name="phone"]').val().trim();
-    
-    if (name.length < 2) {
-        alert('Введите корректное имя');
-        return;
-    }
-    if (phone.replace(/\D/g, '').length < 10) {
-        alert('Введите корректный телефон');
-        return;
-    }
-    
-    $submitBtn.html('<span>Отправка...</span>').prop('disabled', true);
-    
-    $.ajax({
-        url: 'mail.php',
-        type: 'POST',
-        data: $form.serialize(),  // ✅ Исправлено: добавлено "data:"
-        dataType: 'json',
-        timeout: 10000,
-        success: function(response) {
-            if (response.success) {
-                alert('✅ Спасибо! Мы свяжемся с вами в ближайшее время.');
-                $form[0].reset();
-                $('#bookingModal').removeClass('active');
-                $('body').css('overflow', '');
-            } else {
-                console.log('Server errors:', response);
-                alert('⚠️ ' + (response.message || 'Ошибка отправки'));
+    // ОТПРАВКА ФОРМЫ (независимая)
+    // ============================================
+    $(document).on('submit', '#bookingForm', function(e) {
+        e.preventDefault();
+        e.stopPropagation(); // Блокируем всплытие к глобальным обработчикам
+
+        var $form = $(this);
+        var $btn = $form.find('button[type="submit"]');
+        var originalText = $btn.html();
+
+        $btn.html('<span>Отправка...</span>').prop('disabled', true);
+
+        $.ajax({
+            url: 'mail.php',
+            type: 'POST',
+            data: $form.serialize(),
+            dataType: 'json',
+            timeout: 15000,
+            success: function(res) {
+                if (res.success) {
+                    alert('✅ Спасибо! Мы свяжемся с вами в ближайшее время.');
+                    $form[0].reset();
+                    closeModal();
+                } else {
+                    alert('️ ' + (res.message || 'Ошибка валидации'));
+                }
+            },
+            error: function() {
+                alert('❌ Ошибка соединения. Проверьте еще раз введенные Вами данные или позвоните по телефону, указанныму на сайте.');
+            },
+            complete: function() {
+                $btn.html(originalText).prop('disabled', false);
             }
-        },
-        error: function(xhr, status, error) {
-            console.log('AJAX Error:', { status, error, response: xhr.responseText });
-            //alert('❌ Ошибка: ' + (xhr.responseJSON?.message || 'Проверьте консоль'));
-            alert('❌ Ошибка соединения. Попробуйте позвонить по телефонам, указанным на сайте');
-        },
-        complete: function() {
-            $submitBtn.html(originalText).prop('disabled', false);
-        }
+        });
     });
-});
 
 });

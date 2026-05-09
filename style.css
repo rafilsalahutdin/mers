@@ -325,6 +325,10 @@ span.logo-text2 {
     justify-content: center;
 }
 
+#bookingModal { z-index: 2010; }
+#mobileMenu { z-index: 2000; }
+#mobileOverlay { z-index: 1990; }
+
 /* ============================================
    Hero Section
    ============================================ */
@@ -982,6 +986,9 @@ span.logo-text2 {
     .advantage-text h4 {
         font-size: 18px;
     }
+    .fleet-info {
+        padding: 0px;
+    }
 }
 
 /* ============================================
@@ -1498,3 +1505,140 @@ button.btn-primary.btn-full {
 .mt-40 { margin-top: 40px; }
 .mb-20 { margin-bottom: 20px; }
 .mb-40 { margin-bottom: 40px; }
+@media (max-height: 780px) {
+    .form-group {margin-bottom: 5px;}
+    .form-row {gap: 0px;}
+    .contact-form p {display: none;}
+    .form-label span {font-size: 12px;line-height: 1.0;}
+}
+
+/* ============================================
+   Mobile Menu (2026 Premium Style)
+   ============================================ */
+.mobile-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 1990;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 2000;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.mobile-close {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 36px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px;
+    transition: var(--transition-fast);
+    transform: rotate(0deg);
+}
+
+.mobile-close:hover {
+    color: var(--color-gold);
+    transform: rotate(90deg);
+}
+
+.mobile-nav {
+    list-style: none;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.mobile-nav li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+}
+
+/* Stagger animation for links */
+.mobile-menu.active .mobile-nav li:nth-child(1) { opacity: 1; transform: translateX(0); transition-delay: 0.1s; }
+.mobile-menu.active .mobile-nav li:nth-child(2) { opacity: 1; transform: translateX(0); transition-delay: 0.15s; }
+.mobile-menu.active .mobile-nav li:nth-child(3) { opacity: 1; transform: translateX(0); transition-delay: 0.2s; }
+.mobile-menu.active .mobile-nav li:nth-child(4) { opacity: 1; transform: translateX(0); transition-delay: 0.25s; }
+.mobile-menu.active .mobile-nav li:nth-child(5) { opacity: 1; transform: translateX(0); transition-delay: 0.3s; }
+
+.mobile-nav .nav-link {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-white);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-fast);
+}
+
+.mobile-nav .nav-link:hover,
+.mobile-nav .nav-link.active {
+    color: var(--color-gold);
+    padding-left: 15px;
+}
+
+.mobile-footer {
+    padding-top: 25px;
+    border-top: 1px solid var(--color-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-phone {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-white);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.mobile-phone:hover {
+    color: var(--color-gold);
+}
+
+/* Show/Hide logic */
+@media (max-width: 768px) {
+    .nav-menu, .nav-cta { display: none !important; }
+    .hamburger { display: flex !important; }
+    .mobile-menu, .mobile-overlay { display: flex; }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu, .mobile-overlay, .hamburger { display: none !important; }
+}
