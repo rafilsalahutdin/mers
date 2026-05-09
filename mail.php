@@ -1,7 +1,7 @@
 <?php
 /**
  * Обработчик формы заказа
- * Отправка на: info@tatarauto.com
+ * Отправка на: tatarauto@bk.ru
  */
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$to = 'ar2net@yandex.ru';
+$to = 'tatarauto@bk.ru, ar2net@yandex.ru';
 function sanitize($data) {
     return htmlspecialchars(trim($data ?? ''), ENT_QUOTES, 'UTF-8');
 }
