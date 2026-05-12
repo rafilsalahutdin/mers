@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аренда Mercedes-Benz S-Class AMG W223 с водителем в Казани и за пределами города | TatarAuto с водителем</title>
-    <link rel="stylesheet" href="style.css?v=0.4">
+    <link rel="stylesheet" href="style.css?v=0.6">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -175,7 +176,78 @@
                 <h2 class="section-title">Наш Автопарк</h2>
             </div>
             <div class="fleet-content">
-                <!-- Other fleet items would be here -->
+                <div class="fleet-item" id="maybach">
+                    <div class="fleet-image-wrapper">
+                        <div class="fleet-glow"></div>
+                        <img src="image/Maybach/Maybach-1.jpg" alt="Mercedes-Benz S-class W222 Maybach">
+                    </div>
+                    <div class="fleet-info">
+                        <h3 class="fleet-title"><a href="maybach.html">Mercedes-Benz S-class W222 Maybach</a></h3>
+                        <p class="fleet-subtitle">год выпуска 2019, черный</p>
+                        <ul class="fleet-features">
+                            <li>
+                                <img src="image/aero.svg">
+                                Трансфер из аэропорта: <b>10 000 руб.</b>
+                            </li>
+                            <li>
+                                <img src="image/zhd.svg">
+                                Трансфер из ж/д вокзала: <b>7 000 руб.</b>
+                            </li>
+                            <li>
+                                <img src="image/mezh.svg">
+                                Межгород: <b>200 руб/км</b>
+                            </li>
+                            <li>
+                                <img src="image/auto.svg">
+                                Аренда: <b>3 500 ₽/час</b>
+                            </li>
+                        </ul>
+                        <div class="fleet-price">
+                            <div class="price-block">
+                                <div class="price-value"><img src="image/time.svg"></div>
+                                <span class="price-label">Минимальное время: </span>
+                                <span class="price-currency"><b>4 часа</b></span>
+                            </div>
+                            <a href="maybach.html"><button class="btn-primary">Подробнее</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fleet-item" id="gls">
+                    <div class="fleet-image-wrapper">
+                        <div class="fleet-glow"></div>
+                        <img src="image/GLS/GLS-1.jpg" alt="S-Class">
+                    </div>
+                    <div class="fleet-info">
+                        <h3 class="fleet-title"><a href="gls.html">Mercedes-Benz GLS</a></h3>
+                        <p class="fleet-subtitle">год выпуска 2021, черный</p>
+                        <ul class="fleet-features">
+                            <li>
+                                <img src="image/aero.svg">
+                                Трансфер из аэропорта: <b>9 000 руб.</b>
+                            </li>
+                            <li>
+                                <img src="image/zhd.svg">
+                                Трансфер из ж/д вокзала: <b>6 000 руб.</b>
+                            </li>
+                            <li>
+                                <img src="image/mezh.svg">
+                                Межгород: <b>180 руб/км</b>
+                            </li>
+                            <li>
+                                <img src="image/auto.svg">
+                                Аренда: <b>3 000 ₽/час</b>
+                            </li>
+                        </ul>
+                        <div class="fleet-price">
+                            <div class="price-block">
+                                <div class="price-value"><img src="image/time.svg"></div>
+                                <span class="price-label">Минимальное время: </span>
+                                <span class="price-currency"><b>4 часа</b></span>
+                            </div>
+                            <a href="gls.html"><button class="btn-primary">Подробнее</button></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="fleet-item" id="e-class">
                     <div class="fleet-image-wrapper">
                         <div class="fleet-glow"></div>
@@ -509,8 +581,10 @@
                         <div class="form-group">
                             <select name="car" class="form-input" required>
                                 <option value="">Выберите автомобиль</option>
-                                <option value="W222">S-class AMG W222</option>
                                 <option value="W223">S-class AMG W223</option>
+                                <option value="Maybach">S-class W222 Maybach</option>
+                                <option value="GLS">GLS</option>
+                                <option value="W222">S-class AMG W222</option>
                                 <option value="V-Class">V-Class</option>
                                 <option value="Sprinter">Sprinter</option>
                             </select>
@@ -606,8 +680,10 @@
                     <div class="form-group">
                         <select name="car" class="form-input" required>
                             <option value="">Выберите автомобиль</option>
-                            <option value="W222">S-class AMG W222</option>
                             <option value="W223">S-class AMG W223</option>
+                            <option value="Maybach">S-class W222 Maybach</option>
+                            <option value="GLS">GLS</option>
+                            <option value="W222">S-class AMG W222</option>
                             <option value="V-Class">V-Class</option>
                             <option value="Sprinter">Sprinter</option>
                         </select>
@@ -633,7 +709,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="script.js?v=0.4"></script>
+    <script src="script.js?v=0.6"></script>
     <link rel="stylesheet" type="text/css" href="/css/slick.css" />
     <link rel="stylesheet" href="/css/slick-theme.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
